@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  p115dav:
+    build: .
+    container_name: p115dav
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/data
+    environment:
+      - COOKIES=UID=xxx; CID=xxx; SEID=xxx
+      - USERNAME_PASSWORD=admin:123456
+    restart: unless-stopped
